@@ -1,0 +1,201 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Login | SPK Pegawai Terbaik</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "outline-variant": "#a9b4b9",
+                    "on-tertiary-fixed": "#3c3650",
+                    "on-error-container": "#752121",
+                    "on-primary": "#f8f7ff",
+                    "on-tertiary-container": "#4f4964",
+                    "error": "#9f403d",
+                    "inverse-surface": "#0b0f10",
+                    "secondary-container": "#d3e4fe",
+                    "surface": "#f7f9fb",
+                    "on-tertiary-fixed-variant": "#58526e",
+                    "surface-container": "#e8eff3",
+                    "outline": "#717c82",
+                    "on-secondary-container": "#435368",
+                    "secondary-dim": "#44546a",
+                    "on-error": "#fff7f6",
+                    "tertiary": "#625b77",
+                    "background": "#f7f9fb",
+                    "surface-container-high": "#e1e9ee",
+                    "inverse-on-surface": "#9a9d9f",
+                    "inverse-primary": "#8ea6f0",
+                    "primary-fixed": "#dbe1ff",
+                    "on-tertiary": "#fdf7ff",
+                    "surface-variant": "#d9e4ea",
+                    "on-surface-variant": "#566166",
+                    "on-secondary-fixed": "#314055",
+                    "tertiary-fixed-dim": "#d0c7e8",
+                    "secondary-fixed-dim": "#c5d6f0",
+                    "error-dim": "#4e0309",
+                    "secondary": "#506076",
+                    "surface-container-lowest": "#ffffff",
+                    "primary-fixed-dim": "#c7d3ff",
+                    "surface-tint": "#435b9f",
+                    "surface-dim": "#cfdce3",
+                    "tertiary-fixed": "#ded5f7",
+                    "tertiary-container": "#ded5f7",
+                    "on-primary-container": "#364e92",
+                    "on-background": "#2a3439",
+                    "secondary-fixed": "#d3e4fe",
+                    "on-surface": "#2a3439",
+                    "surface-container-highest": "#d9e4ea",
+                    "on-primary-fixed-variant": "#40589c",
+                    "on-secondary": "#f7f9ff",
+                    "surface-bright": "#f7f9fb",
+                    "primary-dim": "#374f92",
+                    "tertiary-dim": "#554f6b",
+                    "on-primary-fixed": "#213b7e",
+                    "primary-container": "#dbe1ff",
+                    "surface-container-low": "#f0f4f7",
+                    "primary": "#435b9f",
+                    "error-container": "#fe8983",
+                    "on-secondary-fixed-variant": "#4d5d73"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": [
+                            "Manrope"
+                    ],
+                    "body": [
+                            "Inter"
+                    ],
+                    "label": [
+                            "Inter"
+                    ]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h1, h2, h3 {
+            font-family: 'Manrope', sans-serif;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .ambient-shadow {
+            box-shadow: 0px 12px 32px -4px rgba(42, 52, 57, 0.08);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface min-h-screen flex flex-col">
+<main class="flex-grow flex items-center justify-center p-6 relative overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover opacity-10 grayscale" data-alt="Modern high-end corporate office interior with clean lines, soft natural light through floor-to-ceiling windows, and professional minimalist aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRzHnjlaAev-VE03uL-7ohOAkAxvBDs5wUZ9qnSw1c-ZusddUYSihnMJA51NbWQ-D_FC6OmDeU0FP2bY3Uk6F8itmLLtsAvZycazlgCUmAURS1AvznGtpRqCL1fNmsYxdj_KdDyHk8nmKbD2OCaGvKjt5iW1eUwBBNi8uWk7xIeU1zjrGClTaT2oFrFwnpbtfuT2ol2XNBq4OkUwtV5fVSNiXYhBhhE-qFEP8i2F0b5FGGhshCl_mJZ1QesFzJUi19GWlwLKVN8ZL0" style="">
+<div class="absolute inset-0 bg-gradient-to-br from-primary/5 via-surface to-secondary/5"></div>
+</div>
+<div class="w-full max-w-md z-10">
+<div class="text-center mb-10">
+<div class="inline-flex items-center justify-center w-16 h-16 bg-primary-container rounded-xl mb-4 ambient-shadow">
+<span class="material-symbols-outlined text-primary text-3xl" data-weight="fill" style="">insights</span>
+</div>
+<h1 class="text-3xl font-extrabold text-on-primary-fixed tracking-tight" style="">Executive Insight</h1>
+<p class="text-on-surface-variant font-medium mt-1" style="">SPK Pegawai Terbaik</p>
+</div>
+<div class="glass-panel p-10 rounded-xl ambient-shadow border border-white/40">
+<div class="mb-8">
+<h2 class="text-xl font-bold text-on-background mb-2" style="">Selamat Datang Kembali</h2>
+<p class="text-on-surface-variant text-sm" style="">Masukkan kredensial Anda untuk mengakses sistem manajemen kinerja.</p>
+</div>
+<form action="#" class="space-y-6" method="POST">
+<div class="mb-6">
+<label class="block text-xs font-semibold text-on-surface-variant uppercase tracking-wider mb-3" style="">Pilih Peran Akses</label>
+<div class="grid grid-cols-3 gap-1 p-1 bg-surface-container-low border border-outline-variant/20 rounded-lg">
+<button class="py-2 text-xs font-bold rounded-md transition-all duration-200 bg-white shadow-sm text-primary ring-1 ring-black/5" id="role-admin" type="button" style="">
+      Admin
+    </button>
+<button class="py-2 text-xs font-semibold rounded-md transition-all duration-200 text-on-surface-variant hover:bg-white/50" id="role-pimpinan" type="button" style="">
+      Pimpinan
+    </button>
+<button class="py-2 text-xs font-semibold rounded-md transition-all duration-200 text-on-surface-variant hover:bg-white/50" id="role-pegawai" type="button" style="">
+      Pegawai
+    </button>
+</div>
+</div><div>
+<label class="block text-xs font-semibold text-on-surface-variant uppercase tracking-wider mb-2" for="nip" style="">NIP (Nomor Induk Pegawai)</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline text-lg" style="">badge</span>
+<input class="w-full pl-12 pr-4 py-3 bg-surface-container-low border border-outline-variant/20 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all outline-none text-on-surface placeholder:text-outline/50" id="nip" name="nip" placeholder="Contoh: 19850101XXXXXXXX" required="" type="text">
+</div>
+</div>
+<div>
+<div class="flex justify-between items-center mb-2">
+<label class="block text-xs font-semibold text-on-surface-variant uppercase tracking-wider" for="password" style="">Kata Sandi</label>
+<a class="text-xs font-medium text-primary hover:underline" href="#" style="">Lupa Sandi?</a>
+</div>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline text-lg" style="">lock</span>
+<input class="w-full pl-12 pr-12 py-3 bg-surface-container-low border border-outline-variant/20 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all outline-none text-on-surface placeholder:text-outline/50" id="password" name="password" placeholder="••••••••" required="" type="password">
+<button class="absolute right-4 top-1/2 -translate-y-1/2 text-outline hover:text-primary transition-colors" type="button" style="">
+<span class="material-symbols-outlined text-lg" style="">visibility</span>
+</button>
+</div>
+</div>
+<div class="flex items-center">
+<input class="w-4 h-4 text-primary bg-surface-container-low border-outline-variant/30 rounded focus:ring-primary/30" id="remember" name="remember" type="checkbox">
+<label class="ml-2 text-sm text-on-surface-variant" for="remember" style="">Ingat saya di perangkat ini</label>
+</div>
+<button class="w-full bg-primary hover:bg-primary-dim text-on-primary font-bold py-3.5 px-4 rounded-lg transition-all active:scale-[0.98] ambient-shadow flex items-center justify-center gap-2" type="submit" style="">
+<span class="" style="">Masuk</span>
+<span class="material-symbols-outlined text-lg" style="">login</span>
+</button>
+</form>
+<div class="mt-8 pt-6 border-t border-outline-variant/10 text-center">
+<p class="text-sm text-on-surface-variant" style="">
+                        Kesulitan mengakses akun? 
+                        <a class="text-primary font-semibold hover:underline" href="#" style="">Hubungi Administrator</a>
+</p>
+</div>
+</div>
+<div class="mt-8 flex items-center justify-center gap-6">
+<div class="flex items-center gap-2 text-outline/60">
+<span class="material-symbols-outlined text-sm" style="">verified_user</span>
+<span class="text-xs font-medium" style="">Secure SSL</span>
+</div>
+<div class="flex items-center gap-2 text-outline/60">
+<span class="material-symbols-outlined text-sm" style="">encrypted</span>
+<span class="text-xs font-medium" style="">End-to-End Encryption</span>
+</div>
+</div>
+</div>
+</main>
+<footer class="py-8 px-6 text-center z-10">
+<p class="text-sm text-outline-variant font-medium" style="">
+            © 2024 Executive Insight Management System. Seluruh Hak Cipta Dilindungi.
+        </p>
+<div class="flex justify-center gap-4 mt-2">
+<a class="text-xs text-outline-variant hover:text-primary transition-colors" href="#" style="">Kebijakan Privasi</a>
+<span class="text-outline-variant/30" style="">•</span>
+<a class="text-xs text-outline-variant hover:text-primary transition-colors" href="#" style="">Syarat &amp; Ketentuan</a>
+<span class="text-outline-variant/30" style="">•</span>
+<a class="text-xs text-outline-variant hover:text-primary transition-colors" href="#" style="">Bantuan IT</a>
+</div>
+</footer>
+</body></html>

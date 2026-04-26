@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary": "#f7f9ff",
+                        "surface": "#f7f9fb",
+                        "on-tertiary-container": "#4f4964",
+                        "on-secondary-fixed": "#314055",
+                        "on-error-container": "#752121",
+                        "on-background": "#2a3439",
+                        "tertiary-dim": "#554f6b",
+                        "inverse-primary": "#8ea6f0",
+                        "surface-container-low": "#f0f4f7",
+                        "surface-variant": "#d9e4ea",
+                        "outline": "#717c82",
+                        "on-primary-container": "#364e92",
+                        "inverse-on-surface": "#9a9d9f",
+                        "surface-container": "#e8eff3",
+                        "error": "#9f403d",
+                        "on-primary-fixed-variant": "#40589c",
+                        "primary-fixed": "#dbe1ff",
+                        "primary-dim": "#374f92",
+                        "primary": "#435b9f",
+                        "secondary-container": "#d3e4fe",
+                        "on-surface-variant": "#566166",
+                        "on-error": "#fff7f6",
+                        "secondary-dim": "#44546a",
+                        "secondary-fixed-dim": "#c5d6f0",
+                        "on-tertiary": "#fdf7ff",
+                        "tertiary-fixed-dim": "#d0c7e8",
+                        "surface-tint": "#435b9f",
+                        "secondary-fixed": "#d3e4fe",
+                        "on-surface": "#2a3439",
+                        "surface-dim": "#cfdce3",
+                        "secondary": "#506076",
+                        "on-tertiary-fixed-variant": "#58526e",
+                        "on-secondary-fixed-variant": "#4d5d73",
+                        "surface-bright": "#f7f9fb",
+                        "background": "#f7f9fb",
+                        "on-primary": "#f8f7ff",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-highest": "#d9e4ea",
+                        "on-secondary-container": "#435368",
+                        "on-primary-fixed": "#213b7e",
+                        "error-container": "#fe8983",
+                        "tertiary": "#625b77",
+                        "primary-container": "#dbe1ff",
+                        "primary-fixed-dim": "#c7d3ff",
+                        "outline-variant": "#a9b4b9",
+                        "surface-container-high": "#e1e9ee",
+                        "error-dim": "#4e0309",
+                        "inverse-surface": "#0b0f10",
+                        "tertiary-fixed": "#ded5f7",
+                        "tertiary-container": "#ded5f7",
+                        "on-tertiary-fixed": "#3c3650"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; background-color: #f7f9fb; color: #2a3439; }
+        .font-headline { font-family: 'Manrope', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        
+        /* Mobile menu toggle classes */
+        #mobile-overlay.active { display: block; }
+        #sidebar.active { transform: translateX(0); }
+        
+        @media (max-width: 1024px) {
+            #sidebar { transform: translateX(-100%); }
+        }
+    </style>
+</head>
+<body class="bg-surface selection:bg-primary-container selection:text-on-primary-container overflow-x-hidden">
+<!-- Mobile Menu Overlay -->
+<div class="fixed inset-0 bg-black/50 z-[45] hidden transition-opacity lg:hidden" id="mobile-overlay" onclick="toggleSidebar()"></div>
+<!-- SideNavBar Shell -->
+<aside class="fixed left-0 top-0 h-screen w-64 bg-white border-r border-slate-100 flex flex-col z-50 transition-transform duration-300 lg:translate-x-0" id="sidebar">
+<div class="p-6 flex items-center justify-between">
+<div>
+<h1 class="text-lg font-bold text-primary tracking-tight font-headline">Performance SPK</h1>
+<p class="text-[10px] font-bold text-slate-400 tracking-[0.2em] uppercase">MANAGEMENT SYSTEM</p>
+</div>
+<button class="lg:hidden p-2 text-slate-400 hover:text-primary" onclick="toggleSidebar()">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<nav class="flex-1 mt-4 px-2 space-y-1 overflow-y-auto">
+<a class="flex items-center gap-3 px-4 py-3 text-primary font-bold border-l-4 border-primary transition-all duration-200 bg-slate-100" href="#">
+<span class="material-symbols-outlined text-primary" data-icon="dashboard">dashboard</span>
+<span class="font-body text-sm">Beranda</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 hover:text-primary hover:bg-slate-50 transition-all duration-200 group border-l-4 border-transparent hover:border-primary/50" href="#">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform" data-icon="badge">badge</span>
+<span class="font-body text-sm">Kelola Pegawai</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 hover:text-primary hover:bg-slate-50 transition-all duration-200 group border-l-4 border-transparent hover:border-primary/50" href="#">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform" data-icon="tune">tune</span>
+<span class="font-body text-sm">Kelola Kriteria</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 hover:text-primary hover:bg-slate-50 transition-all duration-200 group border-l-4 border-transparent hover:border-primary/50" href="#">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform" data-icon="edit_note">edit_note</span>
+<span class="font-body text-sm">Input Nilai</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 hover:text-primary hover:bg-slate-50 transition-all duration-200 group border-l-4 border-transparent hover:border-primary/50" href="#">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform" data-icon="account_tree">account_tree</span>
+<span class="font-body text-sm">Pembobotan AHP</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 hover:text-primary hover:bg-slate-50 transition-all duration-200 group border-l-4 border-transparent hover:border-primary/50" href="#">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform" data-icon="military_tech">military_tech</span>
+<span class="font-body text-sm">Hasil Peringkat</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 hover:text-primary hover:bg-slate-50 transition-all duration-200 group border-l-4 border-transparent hover:border-primary/50" href="#">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform" data-icon="description">description</span>
+<span class="font-body text-sm">Laporan</span>
+</a>
+</nav>
+<div class="px-2 pt-2 border-t border-slate-50">
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 hover:text-primary hover:bg-slate-50 transition-all duration-200 rounded-lg group" href="#">
+<span class="material-symbols-outlined group-hover:rotate-45 transition-transform" data-icon="settings">settings</span>
+<span class="font-body text-sm">Pengaturan</span>
+</a>
+</div>
+<div class="px-6 pb-6 pt-4">
+<button class="flex items-center gap-3 group w-full text-left">
+<div class="w-8 h-8 rounded-full flex items-center justify-center bg-slate-50 group-hover:bg-error-container transition-colors">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-white text-lg" data-icon="logout">logout</span>
+</div>
+<span class="text-sm font-medium text-slate-500 group-hover:text-error transition-colors">Keluar</span>
+</button>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="lg:ml-64 min-h-screen transition-all duration-300">
+<!-- TopNavBar Shell -->
+<header class="flex justify-between items-center px-4 lg:px-8 h-16 bg-white shadow-sm sticky top-0 z-40">
+<div class="flex items-center gap-4">
+<button class="lg:hidden p-2 text-slate-500 hover:bg-slate-50 rounded-lg" onclick="toggleSidebar()">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<div class="hidden md:flex items-center bg-surface-container-low px-4 py-2 rounded-full w-64 lg:w-96 group focus-within:ring-2 focus-within:ring-primary/20 transition-all">
+<span class="material-symbols-outlined text-outline text-xl" data-icon="search">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm font-body w-full ml-2 text-on-surface" placeholder="Cari data..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-3 lg:gap-6">
+<div class="flex items-center gap-1">
+<button class="p-2 hover:bg-slate-50 rounded-full transition-all text-slate-500">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+</button>
+<button class="p-2 hover:bg-slate-50 rounded-full transition-all text-slate-500 relative">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full border-2 border-white"></span>
+</button>
+</div>
+<div class="h-8 w-[1px] bg-slate-200 hidden sm:block"></div>
+<div class="flex items-center gap-3">
+<div class="text-right hidden sm:block">
+<p class="text-sm font-semibold text-on-surface">Drs. Mahendra</p>
+<p class="text-[10px] text-slate-400 font-bold uppercase tracking-wider">ADMIN</p>
+</div>
+<img alt="Profile" class="w-9 h-9 lg:w-10 lg:h-10 rounded-full object-cover ring-2 ring-slate-100 cursor-pointer hover:ring-primary transition-all" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0I0q6izegpyGRuqe3-gK10BbX2saI2xENB9YLmIErWe97_f6sBf5DMVyU02PNlaRO2BsCWnWjKzYIRIiBKmt2sl4tY1pkCAXHkTUTIBGMRpL4WYzxCDf3wXoJIx2FGVyur_d7tGQ4xpWqC5JjeD4IYm_3LpsJErFmf4IVQGj0s7Ddj1liYQultZ7aEhofUo7Aw0EgBfq2sjUb4uZkvWmk-TTupyRZJrtRmwQnC7bwwz2D2fafLCuogAY1svLnazK9iE-qTDdLp2uW"/>
+</div>
+</div>
+</header>
+<div class="p-4 lg:p-8 max-w-7xl mx-auto space-y-6 lg:space-y-8">
+<!-- Welcome Banner -->
+<section class="relative overflow-hidden rounded-xl bg-primary shadow-lg p-6 lg:p-10 flex flex-col md:flex-row justify-between items-center gap-8 group">
+<div class="relative z-10 space-y-4 max-w-xl text-center md:text-left">
+<h2 class="text-2xl md:text-4xl font-headline font-extrabold text-white leading-tight">
+                    Selamat Datang Kembali, Admin Mahendra.
+                </h2>
+<p class="text-primary-container font-body leading-relaxed text-sm lg:text-base">
+                    Sistem Pendukung Keputusan hari ini telah memproses 12 pembaharuan data terbaru. Tinjau performa pegawai berdasarkan kriteria AHP yang telah ditetapkan.
+                </p>
+<div class="flex flex-wrap justify-center md:justify-start gap-4 pt-2">
+<button class="bg-surface-container-lowest text-primary px-6 py-2.5 rounded-lg font-semibold text-sm hover:shadow-xl hover:translate-y-[-2px] active:translate-y-0 transition-all">
+                        Lihat Peringkat
+                    </button>
+<button class="border border-white/20 bg-white/10 backdrop-blur-md text-white px-6 py-2.5 rounded-lg font-semibold text-sm hover:bg-white/20 transition-all">
+                        Panduan Sistem
+                    </button>
+</div>
+</div>
+<div class="relative z-0 opacity-20 md:opacity-100 group-hover:scale-110 transition-transform duration-500">
+<div class="absolute -right-20 -top-20 w-80 h-80 bg-white/10 rounded-full blur-3xl"></div>
+<span class="material-symbols-outlined text-[100px] lg:text-[160px] text-white/10" data-icon="analytics" style='font-variation-settings: "FILL" 1;'>analytics</span>
+</div>
+</section>
+<!-- Summary Stats Cards -->
+<section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+<div class="bg-surface-container-lowest p-6 rounded-xl border-l-4 border-primary shadow-sm hover:shadow-md transition-all group">
+<div class="flex justify-between items-start mb-4">
+<p class="text-xs font-bold text-slate-400 uppercase tracking-widest font-label">Total Employees</p>
+<span class="material-symbols-outlined text-primary-dim bg-primary-container/30 p-2 rounded-lg group-hover:bg-primary group-hover:text-white transition-colors" data-icon="groups">groups</span>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="text-4xl font-headline font-bold text-on-surface">148</span>
+<span class="text-xs font-medium text-primary">+3 bulan ini</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl border-l-4 border-tertiary shadow-sm hover:shadow-md transition-all group">
+<div class="flex justify-between items-start mb-4">
+<p class="text-xs font-bold text-slate-400 uppercase tracking-widest font-label">Total Criteria</p>
+<span class="material-symbols-outlined text-tertiary bg-tertiary-container/30 p-2 rounded-lg group-hover:bg-tertiary group-hover:text-white transition-colors" data-icon="rule">rule</span>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="text-4xl font-headline font-bold text-on-surface">5</span>
+<span class="text-xs font-medium text-slate-400 italic">Core Matrix</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl border-l-4 border-secondary shadow-sm hover:shadow-md transition-all group sm:col-span-2 lg:col-span-1">
+<div class="flex justify-between items-start mb-4">
+<p class="text-xs font-bold text-slate-400 uppercase tracking-widest font-label">Last Assessment</p>
+<span class="material-symbols-outlined text-secondary bg-secondary-container/30 p-2 rounded-lg group-hover:bg-secondary group-hover:text-white transition-colors" data-icon="event_note">event_note</span>
+</div>
+<div class="flex flex-col">
+<span class="text-2xl lg:text-3xl font-headline font-bold text-on-surface">Oct 14, 2023</span>
+<span class="text-xs font-medium text-secondary">Q3 Period Finalized</span>
+</div>
+</div>
+</section>
+<!-- Activity Ledger & Quick Insights (Bento Grid) -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8 pb-12">
+<!-- Latest Assessment Activity -->
+<div class="lg:col-span-2 bg-surface-container-lowest rounded-xl p-4 lg:p-8 shadow-sm">
+<div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-8">
+<h3 class="text-lg font-headline font-bold text-on-surface flex items-center gap-2">
+<span class="w-1 h-6 bg-primary rounded-full"></span>
+                        Aktivitas Penilaian Terkini
+                    </h3>
+<button class="text-sm font-semibold text-primary hover:underline flex items-center gap-1 group">
+                        Lihat Semua
+                        <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+<div class="overflow-x-auto -mx-4 px-4 sm:mx-0 sm:px-0">
+<table class="w-full text-left min-w-[500px]">
+<thead class="bg-surface-container-low">
+<tr>
+<th class="px-4 py-3 text-[10px] font-bold text-slate-500 uppercase tracking-widest font-label rounded-l-lg">Pegawai</th>
+<th class="px-4 py-3 text-[10px] font-bold text-slate-500 uppercase tracking-widest font-label">Periode</th>
+<th class="px-4 py-3 text-[10px] font-bold text-slate-500 uppercase tracking-widest font-label text-center">Skor</th>
+<th class="px-4 py-3 text-[10px] font-bold text-slate-500 uppercase tracking-widest font-label rounded-r-lg">Status</th>
+</tr>
+</thead>
+<tbody class="text-sm">
+<tr class="hover:bg-slate-50 transition-colors border-b border-slate-50 last:border-0 cursor-pointer">
+<td class="px-4 py-5 flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center font-bold text-primary text-xs">AD</div>
+<span class="font-medium">Andi Darmawan</span>
+</td>
+<td class="px-4 py-5 text-slate-500">Oktober 2023</td>
+<td class="px-4 py-5 font-bold text-center">0.892</td>
+<td class="px-4 py-5">
+<span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-[10px] font-bold uppercase">Verified</span>
+</td>
+</tr>
+<tr class="hover:bg-slate-50 transition-colors border-b border-slate-50 last:border-0 cursor-pointer">
+<td class="px-4 py-5 flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-tertiary/10 flex items-center justify-center font-bold text-tertiary text-xs">SB</div>
+<span class="font-medium">Siti Bahari</span>
+</td>
+<td class="px-4 py-5 text-slate-500">Oktober 2023</td>
+<td class="px-4 py-5 font-bold text-center">0.765</td>
+<td class="px-4 py-5">
+<span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-[10px] font-bold uppercase">Verified</span>
+</td>
+</tr>
+<tr class="hover:bg-slate-50 transition-colors border-b border-slate-50 last:border-0 cursor-pointer">
+<td class="px-4 py-5 flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-secondary/10 flex items-center justify-center font-bold text-secondary text-xs">RW</div>
+<span class="font-medium">Raka Wijaya</span>
+</td>
+<td class="px-4 py-5 text-slate-500">Oktober 2023</td>
+<td class="px-4 py-5 font-bold text-center">0.811</td>
+<td class="px-4 py-5">
+<span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-[10px] font-bold uppercase">Draft</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Insights Component -->
+<div class="bg-surface-container-lowest rounded-xl p-6 lg:p-8 flex flex-col justify-between overflow-hidden relative shadow-sm">
+<div>
+<h3 class="text-lg font-headline font-bold text-on-surface mb-6">Konsistensi AHP</h3>
+<div class="space-y-6">
+<div class="space-y-3">
+<div class="flex justify-between text-xs font-bold uppercase tracking-wider text-slate-400">
+<span>Consistency Ratio</span>
+<span class="text-primary">0.084</span>
+</div>
+<div class="w-full h-2.5 bg-slate-100 rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full w-[84%] transition-all duration-1000 ease-out"></div>
+</div>
+<p class="text-[10px] text-slate-400 italic font-medium">Di bawah threshold 0.1 (Valid)</p>
+</div>
+<div class="p-4 bg-slate-50 rounded-lg space-y-3 border border-slate-100">
+<p class="text-xs font-bold text-on-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-sm text-primary">priority_high</span>
+                                Prioritas Utama Hari Ini
+                            </p>
+<ul class="space-y-3">
+<li class="flex items-start gap-2 text-xs text-slate-500 group cursor-pointer hover:text-primary transition-colors">
+<span class="w-1.5 h-1.5 bg-primary rounded-full mt-1 shrink-0"></span>
+<span>Finalisasi pembobotan kriteria Kedisiplinan</span>
+</li>
+<li class="flex items-start gap-2 text-xs text-slate-500 group cursor-pointer hover:text-primary transition-colors">
+<span class="w-1.5 h-1.5 bg-primary rounded-full mt-1 shrink-0"></span>
+<span>Export laporan bulanan pimpinan</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="mt-8 pt-6 border-t border-slate-100 group">
+<div class="relative rounded-lg overflow-hidden h-32 cursor-pointer">
+<img alt="Analytics" class="w-full h-full object-cover grayscale opacity-30 group-hover:scale-110 group-hover:grayscale-0 group-hover:opacity-40 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7wEQE0MjBM9-tpS5DpIvZhzlA_1K1NUp4JE-iw_-dCJWk5Hjaa_YkV1p9gNbpqvxHbuOjJJtpuCsRlFcQNRJCkPmuVmfkQLhfrpd2qT7GXfBXjt6MG1Bt9IrO_cZ48b_tvJyLNdNmH8lA_bSgb1R1QTcbxVP0dcXKy8qV-RNBsMpDTjfE_hULUjITj2-Wt9LVj8P0TdAq7PLVoT2XlnEk69JnqqmPy1Pt-qyEe_MJC8Wa15Qt9v6IzAM8OJsn2z7xbHvaXmnFlEVS"/>
+<div class="absolute inset-0 bg-gradient-to-t from-white via-white/40 to-transparent flex items-end p-4">
+<p class="text-xs font-bold text-primary flex items-center gap-1">
+                                Data Insight Powered by AHP
+                                <span class="material-symbols-outlined text-xs">trending_up</span>
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<script>
+    function toggleSidebar() {
+        const sidebar = document.getElementById('sidebar');
+        const overlay = document.getElementById('mobile-overlay');
+        sidebar.classList.toggle('active');
+        overlay.classList.toggle('active');
+        
+        // Prevent scroll when menu is open
+        if (sidebar.classList.contains('active')) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = '';
+        }
+    }
+
+    // Add some simple animation to the progress bar on load
+    window.addEventListener('load', () => {
+        const bar = document.querySelector('.w-full.h-2\\.5 div');
+        if (bar) {
+            bar.style.width = '0%';
+            setTimeout(() => {
+                bar.style.width = '84%';
+            }, 500);
+        }
+    });
+</script>
+</body></html>

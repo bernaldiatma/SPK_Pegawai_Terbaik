@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Kelola Pegawai - Performance SPK</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary": "#f7f9ff",
+                        "surface": "#f7f9fb",
+                        "on-tertiary-container": "#4f4964",
+                        "on-secondary-fixed": "#314055",
+                        "on-error-container": "#752121",
+                        "on-background": "#2a3439",
+                        "tertiary-dim": "#554f6b",
+                        "inverse-primary": "#8ea6f0",
+                        "surface-container-low": "#f0f4f7",
+                        "surface-variant": "#d9e4ea",
+                        "outline": "#717c82",
+                        "on-primary-container": "#364e92",
+                        "inverse-on-surface": "#9a9d9f",
+                        "surface-container": "#e8eff3",
+                        "error": "#9f403d",
+                        "on-primary-fixed-variant": "#40589c",
+                        "primary-fixed": "#dbe1ff",
+                        "primary-dim": "#374f92",
+                        "primary": "#435b9f",
+                        "secondary-container": "#d3e4fe",
+                        "on-surface-variant": "#566166",
+                        "on-error": "#fff7f6",
+                        "secondary-dim": "#44546a",
+                        "secondary-fixed-dim": "#c5d6f0",
+                        "on-tertiary": "#fdf7ff",
+                        "tertiary-fixed-dim": "#d0c7e8",
+                        "surface-tint": "#435b9f",
+                        "secondary-fixed": "#d3e4fe",
+                        "on-surface": "#2a3439",
+                        "surface-dim": "#cfdce3",
+                        "secondary": "#506076",
+                        "on-tertiary-fixed-variant": "#58526e",
+                        "on-secondary-fixed-variant": "#4d5d73",
+                        "surface-bright": "#f7f9fb",
+                        "background": "#f7f9fb",
+                        "on-primary": "#f8f7ff",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-highest": "#d9e4ea",
+                        "on-secondary-container": "#435368",
+                        "on-primary-fixed": "#213b7e",
+                        "error-container": "#fe8983",
+                        "tertiary": "#625b77",
+                        "primary-container": "#dbe1ff",
+                        "primary-fixed-dim": "#c7d3ff",
+                        "outline-variant": "#a9b4b9",
+                        "surface-container-high": "#e1e9ee",
+                        "error-dim": "#4e0309",
+                        "inverse-surface": "#0b0f10",
+                        "tertiary-fixed": "#ded5f7",
+                        "tertiary-container": "#ded5f7",
+                        "on-tertiary-fixed": "#3c3650"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; background-color: #f7f9fb; }
+        .font-headline { font-family: 'Manrope', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+    </style>
+</head>
+<body class="text-on-background">
+<!-- SideNavBar Shell -->
+<aside class="fixed left-0 top-0 h-screen flex flex-col w-64 border-r border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900 z-50">
+<div class="p-6">
+<h1 class="text-lg font-bold text-blue-900 dark:text-white tracking-tight font-headline" style="">Performance SPK</h1>
+<p class="text-[10px] tracking-widest text-slate-400 font-bold uppercase mt-1" style="">MANAGEMENT SYSTEM</p>
+</div>
+<nav class="flex-1 mt-4 overflow-y-auto">
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 hover:text-blue-900 dark:hover:text-blue-300 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors duration-200" href="#" style="">
+<span class="material-symbols-outlined" data-icon="dashboard" style="">dashboard</span>
+<span class="font-semibold text-sm" style="">Beranda</span>
+</a>
+<!-- Active Tab: Kelola Pegawai -->
+<a class="flex items-center gap-3 px-4 py-3 text-blue-900 dark:text-blue-400 font-bold border-l-4 border-blue-900 dark:border-blue-400 transition-colors duration-200 bg-[#CCD6E0]" href="#" style="">
+<span class="material-symbols-outlined" data-icon="badge" style="">badge</span>
+<span class="text-sm" style="">Kelola Pegawai</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 hover:text-blue-900 dark:hover:text-blue-300 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors duration-200" href="#" style="">
+<span class="material-symbols-outlined" data-icon="tune" style="">tune</span>
+<span class="font-semibold text-sm" style="">Kelola Kriteria</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 hover:text-blue-900 dark:hover:text-blue-300 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors duration-200" href="#" style="">
+<span class="material-symbols-outlined" data-icon="edit_note" style="">edit_note</span>
+<span class="font-semibold text-sm" style="">Input Nilai</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 hover:text-blue-900 dark:hover:text-blue-300 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors duration-200" href="#" style="">
+<span class="material-symbols-outlined" data-icon="account_tree" style="">account_tree</span>
+<span class="font-semibold text-sm" style="">Pembobotan AHP</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 hover:text-blue-900 dark:hover:text-blue-300 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors duration-200" href="#" style="">
+<span class="material-symbols-outlined" data-icon="military_tech" style="">military_tech</span>
+<span class="font-semibold text-sm" style="">Hasil Peringkat</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 hover:text-blue-900 dark:hover:text-blue-300 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors duration-200" href="#" style="">
+<span class="material-symbols-outlined" data-icon="description" style="">description</span>
+<span class="font-semibold text-sm" style="">Laporan</span>
+</a>
+</nav>
+<div class="p-4"><div class="flex flex-col gap-1">
+<a class="flex items-center gap-3 px-4 py-2 text-slate-500 dark:text-slate-400 hover:text-blue-900 dark:hover:text-blue-300 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined text-lg" data-icon="settings">settings</span>
+<span class="font-semibold text-sm">Pengaturan</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-2 text-red-500 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined text-lg" data-icon="logout">logout</span>
+<span class="font-semibold text-sm">Keluar</span>
+</a>
+</div></div>
+</aside>
+<!-- Main Content Area -->
+<main class="ml-64 min-h-screen flex flex-col">
+<!-- TopNavBar Shell -->
+<header class="flex justify-between items-center px-8 h-16 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md sticky top-0 z-40 border-b border-slate-100 dark:border-slate-800">
+<div class="flex items-center flex-1 max-w-md">
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-lg" data-icon="search" style="">search</span>
+<input class="w-full bg-surface-container-low border-none rounded-full py-2 pl-10 pr-4 text-sm focus:ring-2 focus:ring-primary/20 transition-all outline-none text-on-surface" placeholder="Cari data pegawai..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-2">
+<button class="p-2 text-slate-500 hover:bg-slate-50 rounded-full transition-all" style="">
+<span class="material-symbols-outlined" data-icon="help" style="">help</span>
+</button>
+<button class="p-2 text-slate-500 hover:bg-slate-50 rounded-full transition-all relative" style="">
+<span class="material-symbols-outlined" data-icon="notifications" style="">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full border-2 border-white"></span>
+</button>
+</div>
+<div class="h-8 w-[1px] bg-slate-200"></div>
+<div class="flex items-center gap-3">
+<div class="text-right hidden sm:block">
+<p class="text-[11px] font-bold text-on-surface leading-tight" style="">Drs. Mahendra</p>
+<p class="text-[10px] text-slate-400 leading-tight" style="">ADMIN</p>
+</div>
+<img alt="Drs. Mahendra, Pimpinan" class="w-9 h-9 rounded-full object-cover border border-slate-200" data-alt="portrait of a professional mature man in a formal suit looking confident in a corporate setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1S9qCVehm_r6tTy0Vpln56C5LHFCrniAtKr3EOq1YpP_Tgt6SLJPe8axnt0l9U-LMT3I9qHyezflSlnuCfJmQstsjscJZAqYcvCT2I4ItGSnSC3Pokqh2fdo2VNoUk_MYBxkj_IBKtkhPjCL0Klu52NuJlPBYcj-7BWXkBvakrjORAQjlyWYupYVQDL9XtQGKs3QIdX9w1LO-ksl2i9dx7dBdyLPvU46G8WMHYzCnAQX7uL_rrftwTp7T4PGcU12nDdMtUaal0R5l" style=""/>
+</div>
+</div>
+</header>
+<!-- Page Content -->
+<div class="p-8 max-w-7xl w-full mx-auto space-y-8">
+<!-- Header Section -->
+<section class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div>
+<h2 class="text-2xl font-bold font-headline text-on-surface" style="">Kelola Pegawai</h2>
+<p class="text-slate-500 text-sm mt-1" style="">Manajemen basis data pegawai untuk proses penilaian kinerja.</p>
+</div>
+<button class="flex items-center gap-2 bg-primary hover:bg-primary-dim text-white px-6 py-2.5 rounded-lg font-semibold text-sm transition-all shadow-sm active:scale-95" style="">
+<span class="material-symbols-outlined text-lg" data-icon="add" style="">add</span>
+<span class="" style="">Tambah Pegawai</span>
+</button>
+</section>
+<!-- Stats / Summary Cards (Asymmetric Ledger Style) -->
+<section class="grid grid-cols-1 md:grid-cols-4 gap-6">
+<div class="col-span-1 bg-surface-container-lowest p-6 rounded-xl border border-transparent shadow-sm flex flex-col justify-between">
+<p class="text-xs font-bold text-slate-400 uppercase tracking-widest" style="">Total Pegawai</p>
+<div class="mt-4 flex items-baseline gap-2">
+<span class="text-3xl font-bold font-headline" style="">124</span>
+<span class="text-xs text-green-600 font-bold bg-green-50 px-2 py-0.5 rounded" style="">+4 bln ini</span>
+</div>
+</div>
+<div class="col-span-1 md:col-span-2 bg-primary-container/30 p-6 rounded-xl border border-primary/10 relative overflow-hidden">
+<div class="relative z-10">
+<p class="text-xs font-bold text-on-primary-container/70 uppercase tracking-widest" style="">Status Keaktifan</p>
+<div class="mt-4 flex gap-8">
+<div>
+<p class="text-2xl font-bold font-headline text-on-primary-container" style="">118</p>
+<p class="text-[10px] font-bold text-on-primary-container/60" style="">AKTIF</p>
+</div>
+<div class="w-[1px] bg-on-primary-container/10 h-10 self-center"></div>
+<div>
+<p class="text-2xl font-bold font-headline text-on-primary-container" style="">6</p>
+<p class="text-[10px] font-bold text-on-primary-container/60" style="">CUTI/OFF</p>
+</div>
+</div>
+</div>
+<!-- Subtle background decoration -->
+<div class="absolute -right-4 -bottom-4 opacity-10">
+<span class="material-symbols-outlined text-8xl" data-icon="groups" style="">groups</span>
+</div>
+</div>
+<div class="col-span-1 bg-surface-container-lowest p-6 rounded-xl border border-transparent shadow-sm flex flex-col justify-between">
+<p class="text-xs font-bold text-slate-400 uppercase tracking-widest" style="">Departemen</p>
+<div class="mt-4">
+<span class="text-3xl font-bold font-headline text-tertiary" style="">8</span>
+<p class="text-xs text-slate-500 font-medium" style="">Unit Kerja</p>
+</div>
+</div>
+</section>
+<!-- Data Table Module -->
+<section class="bg-surface-container-lowest rounded-xl shadow-sm border border-transparent overflow-hidden">
+<!-- Filter Bar -->
+<div class="px-6 py-4 flex flex-wrap items-center justify-between gap-4 border-b border-slate-50">
+<div class="flex items-center gap-2">
+<button class="flex items-center gap-2 px-3 py-1.5 text-xs font-bold bg-surface-container text-on-surface-variant rounded hover:bg-surface-container-highest transition-colors" style="">
+<span class="material-symbols-outlined text-sm" data-icon="filter_list" style="">filter_list</span>
+                            Filter
+                        </button>
+<button class="flex items-center gap-2 px-3 py-1.5 text-xs font-bold text-slate-400 hover:text-primary transition-colors" style="">
+<span class="material-symbols-outlined text-sm" data-icon="download" style="">download</span>
+                            Export
+                        </button>
+</div>
+<div class="text-[11px] font-medium text-slate-400" style="">
+                        Menampilkan 1-10 dari 124 Pegawai
+                    </div>
+</div>
+<!-- Table Content -->
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead class="bg-surface-container-low">
+<tr>
+<th class="px-6 py-3 text-[10px] font-bold text-slate-500 uppercase tracking-widest" style="">NIP</th>
+<th class="px-6 py-3 text-[10px] font-bold text-slate-500 uppercase tracking-widest" style="">Nama Pegawai</th>
+<th class="px-6 py-3 text-[10px] font-bold text-slate-500 uppercase tracking-widest" style="">Departemen</th>
+<th class="px-6 py-3 text-[10px] font-bold text-slate-500 uppercase tracking-widest" style="">Jabatan</th>
+<th class="px-6 py-3 text-[10px] font-bold text-slate-500 uppercase tracking-widest text-center" style="">Aksi</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-50">
+<!-- Row 1 -->
+<tr class="hover:bg-slate-50 transition-colors group">
+<td class="px-6 py-4 text-sm font-medium text-slate-600" style="">19870512 201101 1 003</td>
+<td class="px-6 py-4" style="">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold text-[10px]" style="">AH</div>
+<div>
+<p class="text-sm font-bold text-on-surface" style="">Agus Hermanto, S.Kom</p>
+<p class="text-[10px] text-slate-400" style="">agus.hermanto@instansi.go.id</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4" style="">
+<span class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-slate-100 text-slate-600" style="">Teknologi Informasi</span>
+</td>
+<td class="px-6 py-4 text-sm text-slate-600" style="">Senior Systems Analyst</td>
+<td class="px-6 py-4" style="">
+<div class="flex items-center justify-center gap-2">
+<button class="p-1.5 text-slate-400 hover:text-primary hover:bg-primary-container rounded transition-all" style="">
+<span class="material-symbols-outlined text-lg" data-icon="edit" style="">edit</span>
+</button>
+<button class="p-1.5 text-slate-400 hover:text-error hover:bg-error/10 rounded transition-all" style="">
+<span class="material-symbols-outlined text-lg" data-icon="delete" style="">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-slate-50 transition-colors group">
+<td class="px-6 py-4 text-sm font-medium text-slate-600" style="">19920315 201503 2 001</td>
+<td class="px-6 py-4" style="">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-purple-100 text-purple-600 flex items-center justify-center font-bold text-[10px]" style="">DR</div>
+<div>
+<p class="text-sm font-bold text-on-surface" style="">Dewi Ratnasari, M.Ak</p>
+<p class="text-[10px] text-slate-400" style="">dewi.ratna@instansi.go.id</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4" style="">
+<span class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-slate-100 text-slate-600" style="">Keuangan</span>
+</td>
+<td class="px-6 py-4 text-sm text-slate-600" style="">Bendahara Madya</td>
+<td class="px-6 py-4" style="">
+<div class="flex items-center justify-center gap-2">
+<button class="p-1.5 text-slate-400 hover:text-primary hover:bg-primary-container rounded transition-all" style="">
+<span class="material-symbols-outlined text-lg" data-icon="edit" style="">edit</span>
+</button>
+<button class="p-1.5 text-slate-400 hover:text-error hover:bg-error/10 rounded transition-all" style="">
+<span class="material-symbols-outlined text-lg" data-icon="delete" style="">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-slate-50 transition-colors group">
+<td class="px-6 py-4 text-sm font-medium text-slate-600" style="">19851122 200902 1 005</td>
+<td class="px-6 py-4" style="">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-green-100 text-green-600 flex items-center justify-center font-bold text-[10px]" style="">BM</div>
+<div>
+<p class="text-sm font-bold text-on-surface" style="">Bambang Mulyono</p>
+<p class="text-[10px] text-slate-400" style="">b.mulyono@instansi.go.id</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4" style="">
+<span class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-slate-100 text-slate-600" style="">Kepegawaian</span>
+</td>
+<td class="px-6 py-4 text-sm text-slate-600" style="">Kepala Sub Bagian Umum</td>
+<td class="px-6 py-4" style="">
+<div class="flex items-center justify-center gap-2">
+<button class="p-1.5 text-slate-400 hover:text-primary hover:bg-primary-container rounded transition-all" style="">
+<span class="material-symbols-outlined text-lg" data-icon="edit" style="">edit</span>
+</button>
+<button class="p-1.5 text-slate-400 hover:text-error hover:bg-error/10 rounded transition-all" style="">
+<span class="material-symbols-outlined text-lg" data-icon="delete" style="">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-slate-50 transition-colors group">
+<td class="px-6 py-4 text-sm font-medium text-slate-600" style="">19950808 201901 2 004</td>
+<td class="px-6 py-4" style="">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-orange-100 text-orange-600 flex items-center justify-center font-bold text-[10px]" style="">SL</div>
+<div>
+<p class="text-sm font-bold text-on-surface" style="">Siti Lutfia</p>
+<p class="text-[10px] text-slate-400" style="">siti.lutfia@instansi.go.id</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4" style="">
+<span class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-slate-100 text-slate-600" style="">Operasional</span>
+</td>
+<td class="px-6 py-4 text-sm text-slate-600" style="">Staff Administrasi</td>
+<td class="px-6 py-4" style="">
+<div class="flex items-center justify-center gap-2">
+<button class="p-1.5 text-slate-400 hover:text-primary hover:bg-primary-container rounded transition-all" style="">
+<span class="material-symbols-outlined text-lg" data-icon="edit" style="">edit</span>
+</button>
+<button class="p-1.5 text-slate-400 hover:text-error hover:bg-error/10 rounded transition-all" style="">
+<span class="material-symbols-outlined text-lg" data-icon="delete" style="">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 5 -->
+<tr class="hover:bg-slate-50 transition-colors group">
+<td class="px-6 py-4 text-sm font-medium text-slate-600" style="">19890130 201212 1 001</td>
+<td class="px-6 py-4" style="">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-red-100 text-red-600 flex items-center justify-center font-bold text-[10px]" style="">RP</div>
+<div>
+<p class="text-sm font-bold text-on-surface" style="">Rian Pratama</p>
+<p class="text-[10px] text-slate-400" style="">rian.p@instansi.go.id</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4" style="">
+<span class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-slate-100 text-slate-600" style="">Humas</span>
+</td>
+<td class="px-6 py-4 text-sm text-slate-600" style="">Pranata Humas Ahli</td>
+<td class="px-6 py-4" style="">
+<div class="flex items-center justify-center gap-2">
+<button class="p-1.5 text-slate-400 hover:text-primary hover:bg-primary-container rounded transition-all" style="">
+<span class="material-symbols-outlined text-lg" data-icon="edit" style="">edit</span>
+</button>
+<button class="p-1.5 text-slate-400 hover:text-error hover:bg-error/10 rounded transition-all" style="">
+<span class="material-symbols-outlined text-lg" data-icon="delete" style="">delete</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination Footer -->
+<div class="px-6 py-4 bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-4">
+<span class="text-[11px] font-bold text-slate-400 uppercase" style="">Baris per halaman:</span>
+<select class="bg-transparent border-none text-xs font-bold text-on-surface focus:ring-0 cursor-pointer">
+<option>10</option>
+<option>25</option>
+<option>50</option>
+</select>
+</div>
+<div class="flex items-center gap-2">
+<button class="w-8 h-8 flex items-center justify-center rounded-lg text-slate-400 hover:bg-white hover:text-primary transition-all disabled:opacity-30" disabled="" style="">
+<span class="material-symbols-outlined text-lg" data-icon="chevron_left" style="">chevron_left</span>
+</button>
+<div class="flex items-center gap-1">
+<button class="w-8 h-8 flex items-center justify-center rounded-lg bg-primary text-white text-xs font-bold" style="">1</button>
+<button class="w-8 h-8 flex items-center justify-center rounded-lg text-slate-600 hover:bg-white text-xs font-bold" style="">2</button>
+<button class="w-8 h-8 flex items-center justify-center rounded-lg text-slate-600 hover:bg-white text-xs font-bold" style="">3</button>
+<span class="px-1 text-slate-400" style="">...</span>
+<button class="w-8 h-8 flex items-center justify-center rounded-lg text-slate-600 hover:bg-white text-xs font-bold" style="">13</button>
+</div>
+<button class="w-8 h-8 flex items-center justify-center rounded-lg text-slate-400 hover:bg-white hover:text-primary transition-all" style="">
+<span class="material-symbols-outlined text-lg" data-icon="chevron_right" style="">chevron_right</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Quick Access / Info (Editorial Component) -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
+<div class="md:col-span-2 space-y-4">
+<h3 class="text-sm font-bold font-headline text-slate-500 uppercase tracking-widest" style="">Informasi Terkini</h3>
+<div class="bg-white p-6 rounded-xl shadow-sm space-y-4">
+<div class="flex gap-4 p-4 rounded-lg bg-surface-container-low/50 border-l-4 border-primary">
+<span class="material-symbols-outlined text-primary" data-icon="info" style="">info</span>
+<div>
+<p class="text-sm font-bold text-on-surface" style="">Pembaruan Struktur Organisasi</p>
+<p class="text-xs text-slate-500 mt-1" style="">Harap pastikan departemen untuk setiap pegawai sudah sesuai dengan SK terbaru nomor 092/2024 per tanggal 1 Maret.</p>
+</div>
+</div>
+<div class="flex gap-4 p-4 rounded-lg hover:bg-slate-50 transition-colors">
+<span class="material-symbols-outlined text-slate-400" data-icon="history" style="">history</span>
+<div>
+<p class="text-sm font-semibold text-slate-600" style="">Aktivitas Terakhir: DRS. MAHENDRA</p>
+<p class="text-xs text-slate-400 mt-0.5" style="">Menambahkan pegawai baru "Lina Safitri" ke departemen Kepegawaian.</p>
+<p class="text-[10px] text-slate-300 mt-1 uppercase font-bold" style="">14 MENIT YANG LALU</p>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-slate-900 rounded-xl p-6 text-white relative overflow-hidden group">
+<div class="relative z-10">
+<p class="text-[10px] font-bold text-blue-400 uppercase tracking-[0.2em]" style="">Pusat Bantuan</p>
+<h4 class="text-xl font-bold font-headline mt-2 leading-tight" style="">Butuh panduan manajemen data?</h4>
+<p class="text-xs text-slate-400 mt-4 leading-relaxed" style="">Unduh panduan lengkap penggunaan sistem evaluasi kinerja SPK dengan metode AHP-WP.</p>
+<button class="mt-6 w-full py-2.5 bg-blue-600 hover:bg-blue-500 text-white rounded-lg text-xs font-bold transition-all flex items-center justify-center gap-2" style="">
+<span class="material-symbols-outlined text-sm" data-icon="menu_book" style="">menu_book</span>
+                            Unduh PDF Panduan
+                        </button>
+</div>
+<!-- Decor -->
+<div class="absolute -top-12 -right-12 w-32 h-32 bg-blue-500/10 rounded-full blur-3xl group-hover:bg-blue-500/20 transition-all duration-700"></div>
+</div>
+</section>
+</div>
+<!-- Footer Shell -->
+<footer class="mt-auto px-8 py-6 border-t border-slate-100 flex flex-col md:flex-row justify-between items-center gap-4 text-slate-400 text-[10px] font-bold uppercase tracking-wider">
+<p class="" style="">© 2024 Management Performance SPK - Hak Cipta Dilindungi</p>
+<div class="flex gap-6">
+<a class="hover:text-primary transition-colors" href="#" style="">Syarat &amp; Ketentuan</a>
+<a class="hover:text-primary transition-colors" href="#" style="">Kebijakan Privasi</a>
+<a class="hover:text-primary transition-colors" href="#" style="">Versi 2.4.0-stable</a>
+</div>
+</footer>
+</main>
+</body></html>
